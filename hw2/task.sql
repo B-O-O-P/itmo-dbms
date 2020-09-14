@@ -48,7 +48,7 @@ insert into Students (id, first_name, second_name, birthday, group_id)
            (2, 'Yaroslav', 'Abubakirov', '1999-03-05', 4),
            (3, 'Alexandra', 'Drozdova', '1999-10-12', 1),
            (4, 'Ali', 'Alekperov', '1999-05-05', 3),
-           (5, 'Ildar', 'Amirov', '1999-06-06', 2);
+           (5, 'Ildar', 'Amirov', null, 2);
 
 insert into Teachers (id, first_name, second_name)
     values (1, 'Georgiy', 'Korneev'),
