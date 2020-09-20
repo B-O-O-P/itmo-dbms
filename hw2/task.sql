@@ -1,15 +1,9 @@
-drop table Marks;
-drop table Students;
-drop table Groups;
-drop table Subjects;
-drop table Teachers;
-
-create table if not exists Groups (
+create table Groups (
     id         int         not null primary key,
     group_name char(5) not null
 );
 
-create table if not exists Students (
+create table Students (
     id          int primary key,
     first_name  varchar(50) not null,
     second_name varchar(50) not null,
@@ -17,19 +11,19 @@ create table if not exists Students (
     group_id    int         not null references Groups (id)
 );
 
-create table if not exists Teachers (
+create table Teachers (
     id          int         not null primary key,
     first_name  varchar(50) not null,
     second_name varchar(50) not null
 );
 
-create table if not exists Subjects (
+create table Subjects (
     id           int         not null primary key,
     subject_name varchar(50) not null,
     teacher_id   int         not null references Teachers (id)
 );
 
-create table if not exists Marks (
+create table Marks (
     mark_value int  not null,
     mark_date  date not null,
     student_id int  not null references Students (id),
@@ -58,7 +52,7 @@ insert into Teachers (id, first_name, second_name)
 
 insert into Subjects (id, subject_name, teacher_id)
     values (1, 'Databases', 1),
-           (2, 'Algorithm and Data Structures', 3),
+           (2, 'Algorithms and Data Structures', 3),
            (3, 'Translation methods', 2),
            (4, 'Java advanced', 1);
 
